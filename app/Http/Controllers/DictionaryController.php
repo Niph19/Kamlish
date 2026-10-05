@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class DictionaryController extends Controller
 {
@@ -11,7 +12,9 @@ class DictionaryController extends Controller
      */
     public function index()
     {
-        //
+        $kamus = Http::get('https://freedictionaryapi.com/api/v1/entries/en/');
+        if ($kamus->successful()) {
+        }
     }
 
     /**
